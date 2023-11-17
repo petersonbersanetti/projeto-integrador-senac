@@ -6,11 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class AdministratorController {
 
-    @GetMapping("/")
-    public String index(Model model){
-        model.addAttribute("nome", "Peterson");
-        return "home/index";
+    @GetMapping("/administrator")
+    public String index(){
+        return "administrator/index";
     }
 }

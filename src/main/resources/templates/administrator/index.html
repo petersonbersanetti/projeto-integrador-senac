@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org">
+<div th:replace="shared/header"></div>
+
+                <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">Usuários Cadastrados</h1>
+                        <p class="mb-4">Aqui são listados os usuários do sistema sendo eles PF(Professores e Alunos) e PJ (Fornecedores) <a target="_blank"
+                                                                                       href="https://datatables.net">official DataTables documentation</a>.</p>
+
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Lista de PF e PJ Cadastrados</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                        <tr>
+                                            <th>Registro</th>
+                                            <th>Nome/Razão Social</th>
+                                            <th>CPF/CNPJ</th>
+                                            <th>Endereço</th>
+                                            <th>Telefone</th>
+                                            <th>E-mail</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tfoot>
+                                        <tr>
+                                            <th>Registro</th>
+                                            <th>Nome/Razão Social</th>
+                                            <th>CPF/CNPJ</th>
+                                            <th>Endereço</th>
+                                            <th>Telefone</th>
+                                            <th>E-mail</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </tfoot>
+                                        <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <th>Telefone</th>
+                                            <th>E-mail</th>
+                                            <td><a href="#" class="btn btn-warning"> Alterar</td>
+                                            <td><a href="#" class="btn btn-danger"> Excluir</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                            <th>Telefone</th>
+                                            <th>E-mail</th>
+                                            <td><a href="#" class="btn btn-warning"> Alterar</td>
+                                            <td><a href="#" class="btn btn-danger">Excluir</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>
