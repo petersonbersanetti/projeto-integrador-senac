@@ -1,5 +1,6 @@
 CREATE TABLE users (
   id_registro BIGINT(20) NOT NULL AUTO_INCREMENT,
+  tx_funcao VARCHAR(100) NOT NULL,
   tx_nome_razao_social VARCHAR(100) NOT NULL,
   tx_cpf_cnpj CHAR(11) NOT NULL,
   tx_endereco VARCHAR(100) NOT NULL,

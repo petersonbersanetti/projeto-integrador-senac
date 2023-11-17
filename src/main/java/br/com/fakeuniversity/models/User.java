@@ -15,8 +15,11 @@ public class User {
     @Column(name = "id_registro")
     private long id;
 
+    @Column(name = "tx_funcao")
+    private String txFuncao;
+
     @Column(name = "tx_nome_razao_social")
-    private String idNome;
+    private String txNome;
 
     @Column(name = "tx_cpf_cnpj")
     private String txCpfCnpj;
