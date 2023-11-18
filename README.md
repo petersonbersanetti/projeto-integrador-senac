@@ -1,7 +1,5 @@
 # PROJETO INTEGRADOR SENAC DESENVOLVIMENTO DE SISTEMAS ORIENTADO A OBJETOS <h1>
 
-## [TUTORIAL](https://github.com/petersonbersanetti/projeto-integrador-senac/edit/main/TUTORIAL.md) <h2>
-
 * Lista de Funcionalidades
 * Tela Login (Administrador, Aluno, Professor e Fornecedor)
 * Direcionamento para tela específica para cada Usuário
