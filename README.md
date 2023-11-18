@@ -10,12 +10,14 @@
 
 
 ### 1. DIAGRAMA DE CASO DE USO <h3>
-
 ![image](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/be57165b-c82a-4655-aa6b-b3df93e0d241)
 
 
+### 2. DIAGRAMA DE CLASSE <h3>
+![image](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/4c3698fd-39f7-4a4c-b995-c69b78afdbcf)
 
-### 2. PROTOTIPAÇÃO HIGH FIDELITY <H3>
+
+### 3. PROTOTIPAÇÃO HIGH FIDELITY <H3>
 
 #### TELA DE LOGIN <H4>
 ![LOGUIN](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/c6379e3e-9429-41fe-a3d3-61ce98e259f8)
