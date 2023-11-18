@@ -17,7 +17,11 @@
 ![image](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/4c3698fd-39f7-4a4c-b995-c69b78afdbcf)
 
 
-### 3. PROTOTIPAÇÃO HIGH FIDELITY <H3>
+### 3. PROTOTIPAÇÃO LOW FIDELITY <H3>
+![low](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/9ee96495-3989-42bf-8419-138878c0a28d)
+
+
+### 4. PROTOTIPAÇÃO HIGH FIDELITY <H3>
 
 #### TELA DE LOGIN <H4>
 ![LOGUIN](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/c6379e3e-9429-41fe-a3d3-61ce98e259f8)
