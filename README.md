@@ -66,7 +66,8 @@
 ![ALUNO CONSULTA DE NOTA](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/1f13db49-21bc-467b-9b7e-7899808ae487)
 
 ##### TELA ALUNO DOWNLOAD MATÉRIA <H5>
-![ALUNO DOWNLOAD MATERIA](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/7fe144cc-df01-4af0-bfe6-301eb1475163)
+![ALUNO DOWNLOAD MATERIA](https://github.com/petersonbersanetti/projeto-integrador-senac/assets/74914733/86f53590-5bd2-447c-95eb-e5ad9a78c0d8)
+
 
 
 #### TELAS FORNECEDOR <H4>
