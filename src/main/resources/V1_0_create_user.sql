@@ -7,4 +7,5 @@ CREATE TABLE users (
   tx_telefone VARCHAR(15) NOT NULL,
   tx_email VARCHAR(100) NOT NULL,
   tx_senha VARCHAR(30) NOT NULL,
+  tx_nota  INT,
   PRIMARY KEY (`id_registro`));

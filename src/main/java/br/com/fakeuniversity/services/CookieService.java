@@ -11,15 +11,15 @@ import java.util.Optional;
 @Service
 public class CookieService {
     public static void setCookie(HttpServletResponse response, String key, String valor, int segundos){
-        Cookie cookie = new Cookie("username", "Jovan");
+        Cookie cookie = new Cookie(key, valor);
         cookie.setMaxAge(segundos);
         response.addCookie(cookie);
     }
 
     public static String getCookie(HttpServletRequest request, String key) {
         return Optional.ofNullable(request.getCookies())
-                .flatMap(cookies -> Arrays.stream(cookies))
-                .filter(cookie -> key.equals(cookie.getName())).stream()
+                .flatMap(cookies -> Arrays.stream(cookies)
+                .filter(cookie -> key.equals(cookie.getName()))
                 .findAny()
                 ).map(e -> e.getValue())
                 .orElse(null);

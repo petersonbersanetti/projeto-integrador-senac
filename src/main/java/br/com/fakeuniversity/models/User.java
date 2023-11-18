@@ -1,9 +1,9 @@
 package br.com.fakeuniversity.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Entity
 @Table(name = "users")
@@ -35,5 +35,8 @@ public class User {
 
     @Column(name = "tx_senha")
     private String txSenha;
+
+    @Column(name = "tx_nota")
+    private int txNota;
 
 }

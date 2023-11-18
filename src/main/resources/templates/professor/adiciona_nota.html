@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org">
+<div th:replace="shared/header"></div>
+
+                <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">Cadatro Novo Aluno</h1>
+                        <p class="mb-4">
+                            Aqui iremos cadastrar um novo Usuário.
+                        </p>
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4" style="padding: 30px">
+                            <form method="POST" action="/professor/criar" onsubmit="return confirm('Confirma o envio dos dados?')">
+                                <div class="form-group">
+                                    <label for="txEmail">E-mail</label>
+                                    <input type="text" class="form-control" required id="txEmail" name="txEmail" placeholder="Digite o E-mail do Aluno">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txNota">Nota</label>
+                                    <input type="text" class="form-control" required id="txNota" name="txNota" placeholder="Digite a nota do Aluno">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Adiciona Nota</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>

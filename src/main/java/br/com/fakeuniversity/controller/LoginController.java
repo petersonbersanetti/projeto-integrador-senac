@@ -26,7 +26,9 @@ public class LoginController {
     public String logar(Model model, User userParam, String lembrar, HttpServletResponse response){
         User user = this.userRepository.Loguin(userParam.getTxEmail(), userParam.getTxSenha());
         if(user != null){
-            CookieService.setCookie(response);
+            int tempoLogado = (60*30); //30min de cookie
+            if(lembrar != null) tempoLogado = tempoLogado;
+            CookieService.setCookie(response, "userId", String.valueOf(user.getId()), 5);
             String funcao = user.getTxFuncao();
                 return "redirect:/";
 //            if ("PROFESSOR".equals(funcao)) {
@@ -38,12 +40,19 @@ public class LoginController {
 //            } else if ("FORNECEDOR".equals(funcao)) {
 //                return "redirect:/fornecedor/dashboard";
 //            } else {
-//
-//            }
+//          }
 //        }
 
         }
         model.addAttribute("erro", "Usuário ou senha inválidos!");
         return "login/index";
     }
+
+    @GetMapping("/sair")
+    public String sair(HttpServletResponse response){
+        CookieService.setCookie(response, "userId", "", 0);
+        return "redirect:/login";
+    }
+
+
 }
