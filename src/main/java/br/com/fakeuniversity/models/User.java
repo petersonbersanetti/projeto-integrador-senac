@@ -36,7 +36,4 @@ public class User {
     @Column(name = "tx_senha")
     private String txSenha;
 
-    @Column(name = "tx_nota")
-    private int txNota;
-
 }
