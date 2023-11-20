@@ -5,43 +5,43 @@
 
                 <div class="container-fluid">
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Cadatro Novo Aluno</h1>
+                        <h1 class="h3 mb-2 text-gray-800">EDIÇÃO DE CADASTRO DE ALUNO</h1>
                         <p class="mb-4">
-                            Aqui iremos cadastrar um novo ALUNO.
+                            EDITE OS DADOS DO ALUNO.
                         </p>
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4" style="padding: 30px">
-                            <form method="POST" action="/pf/aluno/criar" onsubmit="return confirm('Confirma o envio dos dados?')">
+                            <form method="POST" th:action="@{'/administrator/' + ${aluno?.idAluno} + '/atualizar'}">
                                 <div class="form-group">
                                     <label for="txFuncaoAluno">Função</label>
-                                    <input type="text" class="form-control" required id="txFuncaoAluno" name="txFuncaoAluno" placeholder="Digite a Função">
+                                    <input type="text" class="form-control" th:value="${aluno?.txFuncaoAluno}" required id="txFuncaoAluno" name="txFuncaoAluno" placeholder="Digite a Função">
                                 </div>
                                 <div class="form-group">
                                     <label for="txNomeAluno">Nome</label>
-                                    <input type="text" class="form-control" required id="txNomeAluno" name="txNomeAluno" placeholder="Digite o nome">
+                                    <input type="text" class="form-control" th:value="${aluno?.txNomeAluno}" required id="txNomeAluno" name="txNomeAluno" placeholder="Digite o Nome">
                                 </div>
                                 <div class="form-group">
                                     <label for="txCpfAluno">CPF</label>
-                                    <input type="text" class="form-control" required id="txCpfAluno" name="txCpfAluno" placeholder="Digite o CPF(APENAS NÚMEROS)">
+                                    <input type="text" class="form-control" th:value="${aluno?.txCpfAluno}" required id="txCpfAluno" name="txCpfAluno" placeholder="Digite o CPF">
                                 </div>
                                 <div class="form-group">
                                     <label for="txEnderecoAluno">Endereço</label>
-                                    <input type="text" class="form-control" required id="txEnderecoAluno" name="txEnderecoAluno" placeholder="Digite o Endereço">
+                                    <input type="text" class="form-control" th:value="${aluno?.txEnderecoAluno}" required id="txEnderecoAluno" name="txEnderecoAluno" placeholder="Digite o Endereço">
                                 </div>
                                 <div class="form-group">
                                     <label for="txTelefoneAluno">Telefone</label>
-                                    <input type="text" class="form-control" required id="txTelefoneAluno" name="txTelefoneAluno" placeholder="Digite o Telefone (APENAS NÚMEROS)">
+                                    <input type="text" class="form-control" th:value="${aluno?.txTelefoneAluno}" required id="txTelefoneAluno" name="txTelefoneAluno" placeholder="Digite o Telefone">
                                 </div>
                                 <div class="form-group">
                                     <label for="txEmailAluno">E-mail</label>
-                                    <input type="email" class="form-control" required id="txEmailAluno" name="txEmailAluno" placeholder="Digite o E-mail">
-                                </div>
+                                    <input type="text" class="form-control" th:value="${aluno?.txEmailAluno}" required id="txEmailAluno" name="txFuncaoAluno" placeholder="Digite o E-mail">
+                                    txEmailAluno
                                 <div class="form-group">
                                     <label for="txSenhaAluno">Senha</label>
-                                    <input type="password" class="form-control" required id="txSenhaAluno" name="txSenhaAluno" placeholder="Digite a senha">
+                                    <input type="text" class="form-control" th:value="${aluno?.txSenhaAluno}" required id="txSenhaAluno" name="txSenhaAluno" placeholder="Digite a Senha">
                                 </div>
-
-                                <button type="submit" class="btn btn-primary">Cadastrar Aluno</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Editar Aluno</button>
                             </form>
 
                         </div>

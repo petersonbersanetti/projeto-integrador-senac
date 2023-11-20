@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org">
+<div th:replace="shared/header"></div>
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">EDIÇÃO DE CADASTRO DE FORNECEDOR</h1>
+    <p class="mb-4">
+        EDITE OS DADOS DO FORNECEDOR.
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4" style="padding: 30px">
+        <form method="POST" th:action="@{'/administrator/' + ${fornecedor.idFornecedor} + '/atualizar'}" onsubmit="return confirm('Confirma o envio dos dados?')">
+            <div class="form-group">
+                <label for="txFuncaoFornecedor">Função</label>
+                <input type="text" class="form-control" th:value="${fornecedor?.txFuncaoFornecedor}" required id="txFuncaoFornecedor" name="txFuncaoFornecedor" placeholder="Digite a Função">
+            </div>
+            <div class="form-group">
+                <label for="txRazaoSocialFornecedor">Razão Social</label>
+                <input type="text" class="form-control" th:value="${fornecedor?.txRazaoSocialFornecedor}" required id="txRazaoSocialFornecedor" name="txRazaoSocialFornecedor" placeholder="Digite a Razão Social">
+            </div>
+            <div class="form-group">
+                <label for="txCnpjFornecedor">CNPJ</label>
+                <input type="text" class="form-control" th:value="${fornecedor?.txCnpjFornecedor}" required id="txCnpjFornecedor" name="txCnpjFornecedor" placeholder="Digite o CNPJ">
+            </div>
+            <div class="form-group">
+                <label for="txEnderecoFornecedor">Endereço</label>
+                <input type="text" class="form-control" th:value="${fornecedor?.txEnderecoFornecedor}" required id="txEnderecoFornecedor" name="txEnderecoFornecedor" placeholder="Digite o Endereço">
+            </div>
+            <div class="form-group">
+                <label for="txTelefoneFornecedor">Telefone</label>
+                <input type="text" class="form-control" th:value="${fornecedor?.txTelefoneFornecedor}" required id="txTelefoneFornecedor" name="txTelefoneFornecedor" placeholder="Digite o Telefone">
+            </div>
+            <div class="form-group">
+                <label for="txEmailFornecedor">E-mail</label>
+                <input type="text" class="form-control" th:value="${fornecedor?.txEmailFornecedor}" required id="txEmailFornecedor" name="txEmailFornecedor" placeholder="Digite o E-mail">
+                txEmailAluno
+                <div class="form-group">
+                    <label for="txSenhaFornecedor">Senha</label>
+                    <input type="text" class="form-control" th:value="${fornecedor?.txSenhaFornecedor}" required id="txSenhaFornecedor" name="txSenhaFornecedor" placeholder="Digite a Senha">
+                </div>
+
+            <button type="submit" class="btn btn-primary">Editar Fornecedor</button>
+        </form>
+
+    </div>
+
+</div>
+</nav>
+<!-- End of Topbar -->
+<!-- Begin Page Content -->
+<!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>

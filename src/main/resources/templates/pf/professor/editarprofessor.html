@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org">
+<div th:replace="shared/header"></div>
+
+                <div class="container-fluid">
+                        <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">EDIÇÃO DE CADASTRO DE PROFESSOR</h1>
+                    <p class="mb-4">
+                        EDITE OS DADOS DO PROFESSOR.
+                        </p>
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4" style="padding: 30px">
+                            <form method="POST" th:action="@{'/administrator/' + ${professor.idProfessor} + '/atualizar'}">
+                                <div class="form-group">
+                                    <label for="txFuncaoProfessor">Função</label>
+                                    <input type="text" class="form-control" th:value="${professor?.txFuncaoProfessor}" required id="txFuncaoProfessor" name="txFuncaoProfessor" placeholder="Digite a Função">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txNomeProfessor">Nome</label>
+                                    <input type="text" class="form-control" th:value="${professor?.txNomeProfessor}" required id="txNomeProfessor" name="txNomeProfessor" placeholder="Digite o Nome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txCpfProfessor">CPF</label>
+                                    <input type="text" class="form-control" th:value="${professor?.txCpfProfessor}" required id="txCpfProfessor" name="txCpfProfessor" placeholder="Digite o CPF">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txEnderecoProfessor">Endereço</label>
+                                    <input type="text" class="form-control" th:value="${professor?.txEnderecoProfessor}" required id="txEnderecoProfessor" name="txEnderecoProfessor" placeholder="Digite o Endereço">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txTelefoneProfessor">Telefone</label>
+                                    <input type="text" class="form-control" th:value="${professor?.txTelefoneProfessor}" required id="txTelefoneProfessor" name="txTelefoneProfessor" placeholder="Digite o Telefone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txEmailProfessor">E-mail</label>
+                                    <input type="text" class="form-control" th:value="${professor?.txEmailProfessor}" required id="txEmailProfessor" name="txEmailProfessor" placeholder="Digite o E-mail">
+                                    txEmailAluno
+                                    <div class="form-group">
+                                        <label for="txSenhaProfessor">Senha</label>
+                                        <input type="text" class="form-control" th:value="${professor?.txSenhaProfessor}" required id="txSenhaProfessor" name="txSenhaProfessor" placeholder="Digite a Senha">
+                                    </div>
+
+                        </div>
+                                <button type="submit" class="btn btn-primary">Editar Professor</button>
+                            </form>
+
+                    </div>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>

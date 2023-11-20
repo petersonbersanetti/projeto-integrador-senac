@@ -5,19 +5,19 @@
 
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Usuários Cadastrados</h1>
-    <p class="mb-4">Aqui são listados os usuários do sistema sendo eles PF (Professores e Alunos) e PJ (Fornecedores) <a target="_blank"</p>
+    <h1 class="h3 mb-2 text-gray-800">USUÁRIOS CADASTRADOS</h1>
+    <p class="mb-4">Aqui são listados os usuários do sistema sendo eles PF (Professores e Alunos) e PJ (Fornecedores) e Administradores.<a
+            target="_blank"</p>
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <a href="/pf/index" class="btn btn-primary" style="margin-right: 20px;"
-            >Novo PF</a>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex">
+                <a href="/pf/index" class="btn btn-primary mr-2">Novo PF</a>
+                <a href="/pj/novofornecedor" class="btn btn-primary">Novo PJ</a>
+            </div>
         </div>
-        <div class="card-header py-3">
-            <a href="/pj/novofornecedor" class="btn btn-primary" style="margin-right: 20px;"
-            >Novo PJ</a>
-        </div>
+
         <div class="card-body">
             <h6 class="m-0 font-weight-bold text-primary">LISTA DE ALUNOS</h6>
             <div class="table-responsive">
@@ -51,23 +51,23 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    <tr th:each="user : ${user}" th:if="${user instanceof T(br.com.fakeuniversity.models.Aluno)}">
+                    <tr th:each="aluno : ${alunos}">
                         <!-- Aluno -->
-                        <td th:text="${user.id}" /></td>
-                        <td th:text="${user.txFuncao}" /></td>
-                        <td th:text="${user.txNome}" /></td>
-                        <td th:text="${user.txCpf}" /></td>
-                        <td th:text="${user.txEndereco}" /></td>
-                        <td th:text="${user.txTelefone}" /></td>
-                        <td th:text="${user.txEmail}" /></td>
-                        <td th:text="${user.txSenha}" /></td>
-                        <td><a th:href="@{'/administrator/' + ${user.id}}" class="btn btn-warning"> Alterar</td>
-                        <td><a href="#" th:onclick="'if(confirm(\'Confirma?\')) { window.location.href = \'' + @{/administrator/{id}(id=${user.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                        <td th:text="${aluno.idAluno}"></td>
+                        <td th:text="${aluno.txFuncaoAluno}"></td>
+                        <td th:text="${aluno.txNomeAluno}"></td>
+                        <td th:text="${aluno.txCpfAluno}"></td>
+                        <td th:text="${aluno.txEnderecoAluno}"></td>
+                        <td th:text="${aluno.txTelefoneAluno}"></td>
+                        <td th:text="${aluno.txEmailAluno}"></td>
+                        <td th:text="${aluno.txSenhaAluno}"></td>
+                        <td><a th:href="@{'/administrator/' + ${aluno.idAluno}}" class="btn btn-warning">Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administrator/{id}(id=${aluno.idAluno})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <h6 class="m-0 font-weight-bold text-primary">LISTA DE USUÁRIOS PROFESSORES</h6>
+            <h6 class="m-0 font-weight-bold text-primary">LISTA DE PROFESSORES</h6>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -98,69 +98,99 @@
                         <th></th>
                     </tr>
                     </tfoot>
-                    <tr th:each="user : ${user}" th:if="${user instanceof T(br.com.fakeuniversity.models.Professor)}">
-                        <!-- Professor -->
-                        <td th:text="${user.id}" /></td>
-                        <td th:text="${user.txFuncao}" /></td>
-                        <td th:text="${user.txNome}" /></td>
-                        <td th:text="${user.txCpf}" /></td>
-                        <td th:text="${user.txEndereco}" /></td>
-                        <td th:text="${user.txTelefone}" /></td>
-                        <td th:text="${user.txEmail}" /></td>
-                        <td th:text="${user.txSenha}" /></td>
-                        <td><a th:href="@{'/administrator/' + ${user.id}}" class="btn btn-warning"> Alterar</td>
-                        <td><a href="#" th:onclick="'if(confirm(\'Confirma?\')) { window.location.href = \'' + @{/administrator/{id}(id=${user.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                    <tbody>
+                    <tr th:each="professor : ${professores}">
+                        <!-- Aluno -->
+                        <td th:text="${professor.idProfessor}"></td>
+                        <td th:text="${professor.txFuncaoProfessor}"></td>
+                        <td th:text="${professor.txNomeProfessor}"></td>
+                        <td th:text="${professor.txCpfProfessor}"></td>
+                        <td th:text="${professor.txEnderecoProfessor}"></td>
+                        <td th:text="${professor.txTelefoneProfessor}"></td>
+                        <td th:text="${professor.txEmailProfessor}"></td>
+                        <td th:text="${professor.txSenhaProfessor}"></td>
+                        <td><a th:href="@{'/administrator/' + ${professor.idProfessor}}" class="btn btn-warning">Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administrator/{id}(id=${professor.idProfessor})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
                     </tr>
-            </tbody>
-            </table>
-        </div>
-            <h6 class="m-0 font-weight-bold text-primary">LISTA DE USUÁRIOS FORNECEDORES</h6>
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>Registro</th>
-                        <th>Função</th>
-                        <th>Razão Social</th>
-                        <th>CNPJ</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                        <th>Senha</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Registro</th>
-                        <th>Função</th>
-                        <th>Razão Social</th>
-                        <th>CNPJ</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                        <th>Senha</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    </tfoot>
-
-                    <tr th:each="user : ${user}" th:if="${user instanceof T(br.com.fakeuniversity.models.Fornecedor)}">
-                        <!-- Fornecedor -->
-                        <td th:text="${user.id}" /></td>
-                        <td th:text="${user.txFuncao}" /></td>
-                        <td th:text="${user.txRazaoSocial}" /></td>
-                        <td th:text="${user.txCnpj}" /></td>
-                        <td th:text="${user.txEndereco}" /></td>
-                        <td th:text="${user.txTelefone}" /></td>
-                        <td th:text="${user.txEmail}" /></td>
-                        <td th:text="${user.txSenha}" /></td>
-                        <td><a th:href="@{'/administrator/' + ${user.id}}" class="btn btn-warning"> Alterar</td>
-                        <td><a href="#" th:onclick="'if(confirm(\'Confirma?\')) { window.location.href = \'' + @{/administrator/{id}(id=${user.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
-                      </tr>
                     </tbody>
                 </table>
+            </div>
+            <h6 class="m-0 font-weight-bold text-primary">LISTA DE FORNECEDORES</h6>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Função</th>
+                        <th>Razão Social</th>
+                        <th>CNPJ</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Função</th>
+                        <th>Razão Social</th>
+                        <th>CNPJ</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr th:each="fornecedor : ${fornecedores}">
+                        <!-- Aluno -->
+                        <td th:text="${fornecedor.idFornecedor}"></td>
+                        <td th:text="${fornecedor.txFuncaoFornecedor}"></td>
+                        <td th:text="${fornecedor.txRazaoSocialFornecedor}"></td>
+                        <td th:text="${fornecedor.txCnpjFornecedor}"></td>
+                        <td th:text="${fornecedor.txEnderecoFornecedor}"></td>
+                        <td th:text="${fornecedor.txTelefoneFornecedor}"></td>
+                        <td th:text="${fornecedor.txEmailFornecedor}"></td>
+                        <td th:text="${fornecedor.txSenhaFornecedor}"></td>
+                        <td><a th:href="@{'/administrator/' + ${fornecedor.idFornecedor}}" class="btn btn-warning">Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administrator/{id}(id=${fornecedor.idFornecedor})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h6 class="m-0 font-weight-bold text-primary">LISTA DE ADMINISTRADORES</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Registro</th>
+                            <th>Função</th>
+                            <th>E-mail</th>
+                            <th>Senha</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Registro</th>
+                            <th>Função</th>
+                            <th>E-mail</th>
+                            <th>Senha</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each="administrador : ${administradores}">
+                            <!-- Aluno -->
+                            <td th:text="${administrador.idAdmin}"></td>
+                            <td th:text="${administrador.txFuncaoAdmin}"></td>
+                            <td th:text="${administrador.txEmailAdmin}"></td>
+                            <td th:text="${administrador.txSenhaAdmin}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

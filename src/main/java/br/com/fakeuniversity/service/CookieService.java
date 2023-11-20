@@ -1,4 +1,4 @@
-package br.com.fakeuniversity.services;
+package br.com.fakeuniversity.service;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
