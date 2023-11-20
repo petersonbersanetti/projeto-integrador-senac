@@ -18,41 +18,35 @@ public class LoginController {
     private UserRepository userRepository;
 
     @GetMapping("/login")
-    public String index(){
+    public String index() {
         return "login/index";
     }
 
     @PostMapping("/logar")
-    public String logar(Model model, User userParam, String lembrar, HttpServletResponse response){
+    public String logar(Model model, User userParam, String lembrar, HttpServletResponse response) {
         User user = this.userRepository.Loguin(userParam.getTxEmail(), userParam.getTxSenha());
-        if(user != null){
-            int tempoLogado = (60*30); //30min de cookie
-            if(lembrar != null) tempoLogado = tempoLogado;
+        if (user != null) {
+            int tempoLogado = (60 * 30); //30min de cookie
             CookieService.setCookie(response, "userId", String.valueOf(user.getId()), 5);
             String funcao = user.getTxFuncao();
-                return "redirect:/";
-//            if ("PROFESSOR".equals(funcao)) {
-//                return "redirect:/professor/dashboard";
-//            } else if ("ADMINISTRADOR".equals(funcao)) {
-//                return "redirect:/administrator/dashboard";
-//            } else if ("ALUNO".equals(funcao)) {
-//                return "redirect:/aluno/dashboard";
-//            } else if ("FORNECEDOR".equals(funcao)) {
-//                return "redirect:/fornecedor/dashboard";
-//            } else {
-//          }
-//        }
-
+            if ("PROFESSOR".equalsIgnoreCase(funcao)) {
+                return "redirect:/professor";
+            } else if ("ADMINISTRADOR".equalsIgnoreCase(funcao)) {
+                return "redirect:/administrator";
+            } else if ("ALUNO".equalsIgnoreCase(funcao)) {
+                return "redirect:/aluno";
+            } else if ("FORNECEDOR".equalsIgnoreCase(funcao)) {
+                return "redirect:/fornecedor";
+            }
         }
         model.addAttribute("erro", "Usuário ou senha inválidos!");
         return "login/index";
     }
 
+
     @GetMapping("/sair")
-    public String sair(HttpServletResponse response){
-        CookieService.setCookie(response, "userId", "", 0);
-        return "redirect:/login";
+       public String sair (HttpServletResponse response){
+       CookieService.setCookie(response, "userId", "", 0);
+       return "redirect:/login";
     }
-
-
 }

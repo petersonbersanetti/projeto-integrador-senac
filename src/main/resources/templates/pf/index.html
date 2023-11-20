@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org">
+<div th:replace="shared/header"></div>
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Cadastro de PESSOA FÍSICA</h1>
+    <p class="mb-4">ESCOLHA SE DESEJA CADASTRAR UM ALUNO OU PROFESSOR <a target="_blank"</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="/pf/aluno/novoaluno" class="btn btn-primary" style="margin-right: 20px;"
+            >Novo Aluno</a>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <a href="/pf/professor/novoprofessor" class="btn btn-primary" style="margin-right: 20px;"
+                >Novo Professor</a>
+            </div>
+    </div>
+    </nav>
+    <!-- End of Topbar -->
+    <!-- Begin Page Content -->
+    <!-- /.container-fluid -->
+    <div th:replace="shared/footer"></div>

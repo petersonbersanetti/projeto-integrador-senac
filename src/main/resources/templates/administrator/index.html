@@ -11,19 +11,23 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="/administrator/novo" class="btn btn-primary" style="margin-right: 20px;"
-            >Novo Usuário</a>
+            <a href="/pf/index" class="btn btn-primary" style="margin-right: 20px;"
+            >Novo PF</a>
+        </div>
+        <div class="card-header py-3">
+            <a href="/pj/novofornecedor" class="btn btn-primary" style="margin-right: 20px;"
+            >Novo PJ</a>
         </div>
         <div class="card-body">
-            <h6 class="m-0 font-weight-bold text-primary">Lista de PF e PJ Cadastrados</h6>
+            <h6 class="m-0 font-weight-bold text-primary">LISTA DE ALUNOS</h6>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Registro</th>
                         <th>Função</th>
-                        <th>Nome/Razão Social</th>
-                        <th>CPF/CNPJ</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
                         <th>Endereço</th>
                         <th>Telefone</th>
                         <th>E-mail</th>
@@ -36,8 +40,8 @@
                     <tr>
                         <th>Registro</th>
                         <th>Função</th>
-                        <th>Nome/Razão Social</th>
-                        <th>CPF/CNPJ</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
                         <th>Endereço</th>
                         <th>Telefone</th>
                         <th>E-mail</th>
@@ -47,11 +51,12 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    <tr th:each="user : ${user}">
+                    <tr th:each="user : ${user}" th:if="${user instanceof T(br.com.fakeuniversity.models.Aluno)}">
+                        <!-- Aluno -->
                         <td th:text="${user.id}" /></td>
                         <td th:text="${user.txFuncao}" /></td>
                         <td th:text="${user.txNome}" /></td>
-                        <td th:text="${user.txCpfCnpj}" /></td>
+                        <td th:text="${user.txCpf}" /></td>
                         <td th:text="${user.txEndereco}" /></td>
                         <td th:text="${user.txTelefone}" /></td>
                         <td th:text="${user.txEmail}" /></td>
@@ -59,6 +64,101 @@
                         <td><a th:href="@{'/administrator/' + ${user.id}}" class="btn btn-warning"> Alterar</td>
                         <td><a href="#" th:onclick="'if(confirm(\'Confirma?\')) { window.location.href = \'' + @{/administrator/{id}(id=${user.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
                     </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h6 class="m-0 font-weight-bold text-primary">LISTA DE USUÁRIOS PROFESSORES</h6>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Função</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Função</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                    <tr th:each="user : ${user}" th:if="${user instanceof T(br.com.fakeuniversity.models.Professor)}">
+                        <!-- Professor -->
+                        <td th:text="${user.id}" /></td>
+                        <td th:text="${user.txFuncao}" /></td>
+                        <td th:text="${user.txNome}" /></td>
+                        <td th:text="${user.txCpf}" /></td>
+                        <td th:text="${user.txEndereco}" /></td>
+                        <td th:text="${user.txTelefone}" /></td>
+                        <td th:text="${user.txEmail}" /></td>
+                        <td th:text="${user.txSenha}" /></td>
+                        <td><a th:href="@{'/administrator/' + ${user.id}}" class="btn btn-warning"> Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma?\')) { window.location.href = \'' + @{/administrator/{id}(id=${user.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                    </tr>
+            </tbody>
+            </table>
+        </div>
+            <h6 class="m-0 font-weight-bold text-primary">LISTA DE USUÁRIOS FORNECEDORES</h6>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Função</th>
+                        <th>Razão Social</th>
+                        <th>CNPJ</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Função</th>
+                        <th>Razão Social</th>
+                        <th>CNPJ</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Senha</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+
+                    <tr th:each="user : ${user}" th:if="${user instanceof T(br.com.fakeuniversity.models.Fornecedor)}">
+                        <!-- Fornecedor -->
+                        <td th:text="${user.id}" /></td>
+                        <td th:text="${user.txFuncao}" /></td>
+                        <td th:text="${user.txRazaoSocial}" /></td>
+                        <td th:text="${user.txCnpj}" /></td>
+                        <td th:text="${user.txEndereco}" /></td>
+                        <td th:text="${user.txTelefone}" /></td>
+                        <td th:text="${user.txEmail}" /></td>
+                        <td th:text="${user.txSenha}" /></td>
+                        <td><a th:href="@{'/administrator/' + ${user.id}}" class="btn btn-warning"> Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma?\')) { window.location.href = \'' + @{/administrator/{id}(id=${user.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                      </tr>
                     </tbody>
                 </table>
             </div>

@@ -3,11 +3,14 @@ package br.com.fakeuniversity.models;
 import jakarta.persistence.*;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Table(name = "users")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Data
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -17,12 +20,6 @@ public class User {
 
     @Column(name = "tx_funcao")
     private String txFuncao;
-
-    @Column(name = "tx_nome_razao_social")
-    private String txNome;
-
-    @Column(name = "tx_cpf_cnpj")
-    private String txCpfCnpj;
 
     @Column(name = "tx_endereco")
     private String txEndereco;
