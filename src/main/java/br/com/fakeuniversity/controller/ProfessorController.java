@@ -35,4 +35,32 @@ public class ProfessorController {
         professorRepository.save(professor);
         return "redirect:/administrator";
     }
+
+    @PostMapping("/professor/{id}/atualizar")
+    public String atualizarProfessor(@PathVariable Long id, Professor professor){
+        if(!professorRepository.existsById(id)){
+            return "redirect:/administrator";
+        }
+        professorRepository.save(professor);
+        return "redirect:/administrator";
+    }
+
+    @GetMapping("/professor/{id}/excluir")
+    public String atualizar(@PathVariable Long id){
+        professorRepository.deleteById(id);
+        return"redirect:/administrator";
+    }
+
+    @GetMapping("/professor/{id}")
+    public String buscaProfessor(@PathVariable Long id, Model model){
+        Optional<Professor> professor = professorRepository.findById(id);
+        try{
+            model.addAttribute("professor", professor.get());
+        }
+        catch(Exception err){
+            return "redirect:/administrator";
+        }
+        return "/pf/professor/editarprofessor";
+    }
+
 }

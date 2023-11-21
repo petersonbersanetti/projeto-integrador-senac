@@ -11,7 +11,7 @@
                         </p>
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4" style="padding: 30px">
-                            <form method="POST" th:action="@{'/administrator/' + ${professor.idProfessor} + '/atualizar'}">
+                            <form method="POST" th:action="@{'/professor/' + ${professor.idProfessor} + '/atualizar'}" onsubmit="return confirm('Confirma o envio dos dados?')">
                                 <div class="form-group">
                                     <label for="txFuncaoProfessor">Função</label>
                                     <input type="text" class="form-control" th:value="${professor?.txFuncaoProfessor}" required id="txFuncaoProfessor" name="txFuncaoProfessor" placeholder="Digite a Função">
@@ -35,7 +35,6 @@
                                 <div class="form-group">
                                     <label for="txEmailProfessor">E-mail</label>
                                     <input type="text" class="form-control" th:value="${professor?.txEmailProfessor}" required id="txEmailProfessor" name="txEmailProfessor" placeholder="Digite o E-mail">
-                                    txEmailAluno
                                     <div class="form-group">
                                         <label for="txSenhaProfessor">Senha</label>
                                         <input type="text" class="form-control" th:value="${professor?.txSenhaProfessor}" required id="txSenhaProfessor" name="txSenhaProfessor" placeholder="Digite a Senha">

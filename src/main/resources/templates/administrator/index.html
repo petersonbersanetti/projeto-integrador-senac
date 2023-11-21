@@ -61,8 +61,8 @@
                         <td th:text="${aluno.txTelefoneAluno}"></td>
                         <td th:text="${aluno.txEmailAluno}"></td>
                         <td th:text="${aluno.txSenhaAluno}"></td>
-                        <td><a th:href="@{'/administrator/' + ${aluno.idAluno}}" class="btn btn-warning">Alterar</td>
-                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administrator/{id}(id=${aluno.idAluno})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                        <td><a th:href="@{'/aluno/' + ${aluno.idAluno}}" class="btn btn-warning">Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/aluno/{id}(id=${aluno.idAluno})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
                     </tr>
                     </tbody>
                 </table>
@@ -109,8 +109,8 @@
                         <td th:text="${professor.txTelefoneProfessor}"></td>
                         <td th:text="${professor.txEmailProfessor}"></td>
                         <td th:text="${professor.txSenhaProfessor}"></td>
-                        <td><a th:href="@{'/administrator/' + ${professor.idProfessor}}" class="btn btn-warning">Alterar</td>
-                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administrator/{id}(id=${professor.idProfessor})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                        <td><a th:href="@{'/professor/' + ${professor.idProfessor}}" class="btn btn-warning">Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/professor/{id}(id=${professor.idProfessor})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
                     </tr>
                     </tbody>
                 </table>
@@ -157,8 +157,8 @@
                         <td th:text="${fornecedor.txTelefoneFornecedor}"></td>
                         <td th:text="${fornecedor.txEmailFornecedor}"></td>
                         <td th:text="${fornecedor.txSenhaFornecedor}"></td>
-                        <td><a th:href="@{'/administrator/' + ${fornecedor.idFornecedor}}" class="btn btn-warning">Alterar</td>
-                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/administrator/{id}(id=${fornecedor.idFornecedor})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                        <td><a th:href="@{'/fornecedor/' + ${fornecedor.idFornecedor}}" class="btn btn-warning">Alterar</td>
+                        <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/fornecedor/{id}(id=${fornecedor.idFornecedor})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
                     </tr>
                     </tbody>
                 </table>

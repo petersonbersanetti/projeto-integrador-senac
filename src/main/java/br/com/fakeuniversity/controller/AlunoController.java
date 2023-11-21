@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,13 +36,31 @@ public class AlunoController {
 
     }
 
+    @GetMapping("/aluno/{id}")
+    public String buscaAluno(@PathVariable Long id, Model model){
+        Optional<Aluno> aluno = alunoRepository.findById(id);
+        try{
+            model.addAttribute("aluno", aluno.get());
+        }
+        catch(Exception err){
+            return "redirect:/administrator";
+        }
+        return "/pf/aluno/editaraluno";
+    }
+
     @PostMapping("/aluno/{id}/atualizar")
-    public String atualizarAluno(@PathVariable Long id, Aluno aluno){
-        if(!alunoRepository.existsById(id)){
-            return "redirect:/administradores";
+    public String atualizar(@PathVariable Long id, Aluno aluno) {
+        if (!alunoRepository.existsById(id)) {
+            return "redirect:/administrator";
         }
         alunoRepository.save(aluno);
-        return "redirect:/administradores";
+        return "redirect:/administrator";
+    }
+
+    @GetMapping("/aluno/{id}/excluir")
+    public String excluirAluno(@PathVariable Long id) {
+        alunoRepository.deleteById(id);
+        return "redirect:/administrator";
     }
 
 

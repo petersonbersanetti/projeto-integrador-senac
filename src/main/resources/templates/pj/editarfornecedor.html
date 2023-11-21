@@ -10,7 +10,7 @@
         EDITE OS DADOS DO FORNECEDOR.
     <!-- DataTales Example -->
     <div class="card shadow mb-4" style="padding: 30px">
-        <form method="POST" th:action="@{'/administrator/' + ${fornecedor.idFornecedor} + '/atualizar'}" onsubmit="return confirm('Confirma o envio dos dados?')">
+        <form method="POST" th:action="@{'/fornecedor/' + ${fornecedor.idFornecedor} + '/atualizar'}" onsubmit="return confirm('Confirma o envio dos dados?')">
             <div class="form-group">
                 <label for="txFuncaoFornecedor">Função</label>
                 <input type="text" class="form-control" th:value="${fornecedor?.txFuncaoFornecedor}" required id="txFuncaoFornecedor" name="txFuncaoFornecedor" placeholder="Digite a Função">
@@ -34,7 +34,6 @@
             <div class="form-group">
                 <label for="txEmailFornecedor">E-mail</label>
                 <input type="text" class="form-control" th:value="${fornecedor?.txEmailFornecedor}" required id="txEmailFornecedor" name="txEmailFornecedor" placeholder="Digite o E-mail">
-                txEmailAluno
                 <div class="form-group">
                     <label for="txSenhaFornecedor">Senha</label>
                     <input type="text" class="form-control" th:value="${fornecedor?.txSenhaFornecedor}" required id="txSenhaFornecedor" name="txSenhaFornecedor" placeholder="Digite a Senha">
