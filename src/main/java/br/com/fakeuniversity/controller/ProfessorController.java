@@ -55,12 +55,13 @@ public class ProfessorController {
         if(!professorRepository.existsById(id)){
             return "redirect:/administrator";
         }
+        professor.setIdProfessor(id);
         professorRepository.save(professor);
         return "redirect:/administrator";
     }
 
     @GetMapping("/professor/{id}/excluir")
-    public String atualizar(@PathVariable Long id){
+    public String excluir(@PathVariable Long id){
         professorRepository.deleteById(id);
         return"redirect:/administrator";
     }
@@ -76,20 +77,6 @@ public class ProfessorController {
         }
         return "/pf/professor/editarprofessor";
     }
-
-
-    @GetMapping("/aluno/{id}")
-    public String buscaAluno(@PathVariable Long id, Model model){
-        Optional<Aluno> aluno = alunoRepository.findById(id);
-        try{
-            model.addAttribute("aluno", aluno.get());
-        }
-        catch(Exception err){
-            return "redirect:/administrator";
-        }
-        return "/pf/aluno/editarnotaaluno";
-    }
-
 
 
 }

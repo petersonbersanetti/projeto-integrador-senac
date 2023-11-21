@@ -49,11 +49,11 @@ public class AlunoController {
     }
 
     @PostMapping("/aluno/{id}/atualizar")
-    public String atualizar(@PathVariable Long id, Aluno aluno) {
-        Optional<Aluno> user = alunoRepository.findById(id);
-            if (!user.isPresent()) {
+    public String atualizarAluno(@PathVariable Long id, Aluno aluno){
+        if(!alunoRepository.existsById(id)){
             return "redirect:/administrator";
         }
+        aluno.setIdAluno(id);
         alunoRepository.save(aluno);
         return "redirect:/administrator";
     }
@@ -63,7 +63,4 @@ public class AlunoController {
         alunoRepository.deleteById(id);
         return "redirect:/administrator";
     }
-
-
-
 }

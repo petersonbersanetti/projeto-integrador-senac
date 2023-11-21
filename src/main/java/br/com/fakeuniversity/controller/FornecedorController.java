@@ -2,6 +2,7 @@ package br.com.fakeuniversity.controller;
 
 import br.com.fakeuniversity.model.Aluno;
 import br.com.fakeuniversity.model.Fornecedor;
+import br.com.fakeuniversity.model.Professor;
 import br.com.fakeuniversity.repository.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +38,7 @@ public class FornecedorController {
         if(!fornecedorRepository.existsById(id)){
             return "redirect:/administrator";
         }
+        fornecedor.setIdFornecedor(id);
         fornecedorRepository.save(fornecedor);
         return "redirect:/administrator";
     }
