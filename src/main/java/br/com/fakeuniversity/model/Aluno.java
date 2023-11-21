@@ -2,15 +2,12 @@ package br.com.fakeuniversity.model;
 
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Entity
-@Table(name = "alunos")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "alunos")
 public class Aluno {
 
     @Id

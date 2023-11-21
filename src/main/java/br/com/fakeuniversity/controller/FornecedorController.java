@@ -42,7 +42,7 @@ public class FornecedorController {
     }
 
     @GetMapping("/fornecedor/{id}/excluir")
-    public String atualizar(@PathVariable Long id){
+    public String atualizar (@PathVariable Long id){
         fornecedorRepository.deleteById(id);
         return"redirect:/administrator";
     }

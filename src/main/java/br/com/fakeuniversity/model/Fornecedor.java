@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "fornecedores")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Fornecedor {
 
     @Id

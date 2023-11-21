@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "professores")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Professor {
 
     @Id

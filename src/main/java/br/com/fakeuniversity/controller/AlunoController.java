@@ -50,7 +50,8 @@ public class AlunoController {
 
     @PostMapping("/aluno/{id}/atualizar")
     public String atualizar(@PathVariable Long id, Aluno aluno) {
-        if (!alunoRepository.existsById(id)) {
+        Optional<Aluno> user = alunoRepository.findById(id);
+            if (!user.isPresent()) {
             return "redirect:/administrator";
         }
         alunoRepository.save(aluno);

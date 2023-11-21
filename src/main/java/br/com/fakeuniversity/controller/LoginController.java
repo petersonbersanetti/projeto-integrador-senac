@@ -100,7 +100,7 @@ public class LoginController {
             int tempoLogado = (10*60); // 10 minutos de cookie
             if(lembrar != null) tempoLogado = (60*60*24); // 1 dia de cookie
             CookieService.setCookie(response, "usuarioId", String.valueOf(professor.getIdProfessor()), tempoLogado);
-            return "redirect:/pf/professor";
+            return "redirect:/pf/professor/index";
         }
         model.addAttribute("erro", "Usuário ou senha inválidos");
         return "login/professor";
