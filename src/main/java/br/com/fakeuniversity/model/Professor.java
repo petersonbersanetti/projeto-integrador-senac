@@ -38,6 +38,10 @@ public class Professor {
     @Column(name = "tx_cpf_professor")
     private String txCpfProfessor;
 
+    @Lob
+    @Column(name = "doc_arquivo")
+    private byte[] docProfessor;
+
 }
 
 
