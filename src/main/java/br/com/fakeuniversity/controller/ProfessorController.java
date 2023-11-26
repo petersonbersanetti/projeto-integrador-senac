@@ -78,5 +78,27 @@ public class ProfessorController {
         return "/pf/professor/editarprofessor";
     }
 
+    @GetMapping("/aluno/{id}/editarnotaaluno")
+    public String buscaAluno(@PathVariable Long id, Model model){
+        Optional<Aluno> aluno = alunoRepository.findById(id);
+        try{
+            model.addAttribute("aluno", aluno.get());
+        }
+        catch(Exception err){
+            return "redirect:/professor/index";
+        }
+        return "/pf/aluno/editarnotaaluno";
+    }
+
+    @PostMapping("/aluno/{id}/atualizarnotaaluno")
+    public String atualizarAluno(@PathVariable Long id, Aluno aluno){
+        if(!alunoRepository.existsById(id)){
+            return "redirect:/pf/professor/index";
+        }
+        aluno.setIdAluno(id);
+        alunoRepository.save(aluno);
+        return "redirect:/pf/professor/index";
+    }
+
 
 }

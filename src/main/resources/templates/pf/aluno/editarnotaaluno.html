@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org">
+<div th:replace="shared/header"></div>
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">EDIÇÃO DE CADASTRO DE ALUNO</h1>
+    <p class="mb-4">
+        EDITE OS DADOS DO ALUNO.
+    </p>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4" style="padding: 30px">
+        <form method="POST" th:action="@{'/aluno/' + ${aluno?.idAluno} + '/atualizarnotaaluno'}"
+              onsubmit="return confirm('Confirma o envio dos dados?')">
+            <div class="form-group">
+                <label for="txNomeAluno">Nome</label>
+                <input type="text" readonly class="form-control" th:value="${aluno?.txNomeAluno}" id="txNomeAluno" name="txNomeAluno">
+            </div>
+            <div class="form-group">
+                <label for="txNotaAluno">Nota</label>
+                <input type="text" class="form-control" th:value="${aluno?.txNotaAluno}" required id="txNotaAluno"
+                       name="txNotaAluno" placeholder="Digite a Nota">
+            </div>
+
+            <div class="form-group" style="display: none;">
+                <label type="hidden" for="txFuncaoAluno"></label>
+                <input type="hidden" th:value="${aluno?.txFuncaoAluno}" id="txFuncaoAluno" name="txFuncaoAluno">
+            </div>
+    <div class="form-group " style="display: none;">
+                <label type="hidden" for="txCpfAluno"></label>
+                <input type="hidden" th:value="${aluno?.txCpfAluno}" id="txCpfAluno" name="txCpfAluno">
+            </div>
+    <div class="form-group " style="display: none;">
+                <label type="hidden" for="txEnderecoAluno"></label>
+                <input type="hidden" th:value="${aluno?.txEnderecoAluno}" id="txEnderecoAluno" name="txEnderecoAluno">
+            </div>
+    <div class="form-group " style="display: none;">
+                <label type="hidden" for="txTelefoneAluno"></label>
+                <input type="hidden" th:value="${aluno?.txTelefoneAluno}" id="txTelefoneAluno" name="txTelefoneAluno">
+            </div>
+    <div class="form-group " style="display: none;">
+                <label type="hidden" for="txEmailAluno"></label>
+                <input type="hidden" th:value="${aluno?.txEmailAluno}" id="txEmailAluno" name="txEmailAluno">
+            </div>
+    <div class="form-group " style="display: none;">
+                <label type="hidden" for="txSenhaAluno"></label>
+                <input type="hidden" th:value="${aluno?.txSenhaAluno}" id="txSenhaAluno" name="txSenhaAluno">
+            </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Adicionar Nota</button>
+    </form>
+
+</div>
+
+</div>
+</nav>
+<!-- End of Topbar -->
+<!-- Begin Page Content -->
+<!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>

@@ -43,7 +43,7 @@
                         <td th:text="${aluno.txNomeAluno}"></td>
                         <td th:text="${aluno.txEmailAluno}"></td>
                         <td th:text="${aluno.txNotaAluno}"></td>
-                        <td><a th:href="@{'/aluno/' + ${aluno.idAluno}}" class="btn btn-warning">Alterar</td>
+                        <td><a th:href="@{'/aluno/' + ${aluno.idAluno} + '/editarnotaaluno'}" class="btn btn-warning">Alterar</td>
                     </tr>
                     </tbody>
                 </table>

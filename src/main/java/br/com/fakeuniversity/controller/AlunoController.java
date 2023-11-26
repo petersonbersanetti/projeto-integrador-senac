@@ -5,6 +5,7 @@ import br.com.fakeuniversity.model.Fornecedor;
 import br.com.fakeuniversity.model.Professor;
 import br.com.fakeuniversity.repository.AlunoRepository;
 import com.fasterxml.jackson.databind.node.ValueNode;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,6 +48,7 @@ public class AlunoController {
         }
         return "/pf/aluno/editaraluno";
     }
+
 
     @PostMapping("/aluno/{id}/atualizar")
     public String atualizarAluno(@PathVariable Long id, Aluno aluno){
