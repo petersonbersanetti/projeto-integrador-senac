@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.com.org" xmlns="http://www.w3.org/1999/html">
+<div th:replace="shared/header"></div>
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">PAINEL DO PROFESSOR</h1>
+    <p class="mb-4">Aqui você pode fazer o UPLOAD de um arquivo para seus alunos e verificar os arquivos anteriores upados. <a target="_blank"</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <h6 class="m-0 font-weight-bold text-primary">Upload de Arquivo/Material</h6>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <form method="POST" th:action="@{'/pf/professor/uploadarquivo'}" th:method="post"
+                          enctype="multipart/form-data">
+                        </head>
+                        <body>
+
+                        <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+                            <label>Nome: <input type="text" name="arquivoNome"></label><br>
+                            <label>Arquivo: <input type="file" name="dados"></label><br>
+                            <input type="submit" value="Upload" class="btn btn-primary">
+                        </form>
+                        </body>
+                        <p></p>
+                        <br></br>
+
+                            <h6 class="m-0 font-weight-bold text-primary">Arquivos</h6>
+
+                            <table border="1">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Download</th>
+                                    <th>Apagar</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="arquivo : ${arquivos}">
+                                    <td th:text="${arquivo.id}"></td>
+                                    <td th:text="${arquivo.arquivoNome}"></td>
+                                    <td><a th:href="@{'/download/' + ${arquivo.id}}" class="btn btn-secondary">Download</a></td>
+                                    <td><a href="#" th:onclick="'if(confirm(\'Confirma ?\')) { window.location.href = \'' + @{/download/{id}(id=${arquivo.id})} + '/excluir\' } '" class="btn btn-danger">Excluir</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                    </form>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</nav>
+<!-- End of Topbar -->
+<!-- Begin Page Content -->
+<!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>
